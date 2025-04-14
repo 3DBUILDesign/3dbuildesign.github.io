@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - 3D BUILD</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div style="text-align: right; padding: 10px;">
+    <label for="lang-select">🌐 Language:</label>
+    <select id="lang-select" onchange="changeLanguage(this.value)">
+        <option value="fr" SELECTED>Français</option>
+        <option value="en">English</option>
+    </select>
+</div>
+<script>
+function changeLanguage(lang) {
+    if (lang === 'en') {
+        window.location.href = window.location.pathname.replace('.html', '_en.html');
+    } else {
+        window.location.href = window.location.pathname.replace('_en.html', '.html');
+    }
+}
+</script>
+
+    <header>
+        <img src="logo.png" alt="Logo 3D BUILD" class="logo">
+        
+        <p class="slogan">Réparez. Créez. Innover, en 3D.</p>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="services.html">Services</a>
+            <a href="boutique.html">Boutique</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <section id="services">
+            <h2>Nos Services</h2>
+            <ul>
+                <li>📦 Impression 3D à partir de vos fichiers</li>
+                <li>🛠️ Réparation de pièces cassées</li>
+                <li>🎨 Création d’objets personnalisés (prénoms, logos, cadeaux)</li>
+                <li>📐 Conception ou modification de fichiers 3D</li>
+            </ul>
+
+            
+
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 3D BUILD - Tous droits réservés</p>
+    </footer>
+</body>
+</html>

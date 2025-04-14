@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - 3D BUILD</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div style="text-align: right; padding: 10px;">
+    <label for="lang-select">🌐 Language:</label>
+    <select id="lang-select" onchange="changeLanguage(this.value)">
+        <option value="fr" SELECTED>Français</option>
+        <option value="en">English</option>
+    </select>
+</div>
+<script>
+function changeLanguage(lang) {
+    if (lang === 'en') {
+        window.location.href = window.location.pathname.replace('.html', '_en.html');
+    } else {
+        window.location.href = window.location.pathname.replace('_en.html', '.html');
+    }
+}
+</script>
+
+
+<div style="text-align: right; padding: 10px;">
+    <label for="lang-select">🌐 Langue / Language:</label>
+    <select id="lang-select" onchange="changeLanguage(this.value)">
+        <option value="fr" selected>Français</option>
+        <option value="en">English</option>
+    </select>
+</div>
+<script>
+function changeLanguage(lang) {
+    if(lang === 'en') {
+        alert("English version coming soon!"); // Placeholder
+    } else {
+        alert("Vous êtes déjà sur la version française."); // Placeholder
+    }
+}
+</script>
+
+    <header>
+        <img src="logo.png" alt="Logo 3D BUILD" class="logo">
+        
+        <p class="slogan">Réparez. Créez. Innover, en 3D.</p>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="services.html">Services</a>
+            <a href="boutique.html">Boutique</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <main>
+
+<section id="presentation">
+    <h2>Bienvenue chez 3D BUILD</h2>
+    <p>
+        Passionné par l'impression 3D et les solutions sur mesure, je vous propose un service local, rapide
+        et accessible.<br>
+        Que vous ayez un projet précis ou simplement une idée à explorer, 3D BUILD est là pour
+        transformer vos besoins en réalité, avec efficacité et créativité.<br>
+        Parce que réparer, créer et innover n'a jamais été aussi accessible, grâce à l'impression 3D.<br>
+        <strong>Mon objectif :</strong> faire de l'impression 3D une solution utile, durable et innovante pour tous.
+    </p>
+    
+</section>
+
+
+        <section id="presentation">
+            <p>Spécialiste de l'impression 3D à la demande, de la conception personnalisée, de la réparation de pièces cassées, et plus encore !</p>
+
+            
+
+        </section>
+    
+<section id="creations">
+    <h2>Créations & Réparations</h2>
+    <div class="gallery">
+        <img src="media/creation1.jpg" alt="Création 3D 1">
+        <img src="media/creation2.jpg" alt="Création 3D 2">
+        <img src="media/reparation1.jpg" alt="Réparation 3D 1">
+    </div>
+</section>
+
+</main>
+    <footer>
+        <p>© 2025 3D BUILD - Tous droits réservés</p>
+    </footer>
+
+<section id="ensavoirplus" style="padding: 40px; background-color: #f5f5f5;">
+    <h2>En savoir plus sur 3D BUILD</h2>
+    <p>
+        Chez 3D BUILD, on donne une seconde vie à vos objets grâce à l'impression 3D.<br>
+        Que ce soit pour réparer une pièce cassée, créer un prototype ou modéliser une idée, on propose un service local, rapide et sur mesure.<br>
+        Moins de gaspillage, plus d'innovation, avec un rendu pro et abordable.
+    </p>
+    <p>
+        3D BUILD est une jeune entreprise spécialisée dans l'impression 3D à la demande. Notre mission ? Offrir des solutions rapides, accessibles et personnalisées pour la réparation, le prototypage et la fabrication sur mesure.<br>
+        On s'adresse aux particuliers, aux bricoleurs, aux créateurs et aux entreprises locales qui veulent économiser du temps, de l'argent, et surtout, éviter le gaspillage.
+    </p>
+    <p>
+        On utilise des matériaux de qualité, des outils de modélisation pro et un savoir-faire technique pour transformer vos idées ou vos besoins concrets en objets tangibles.<br>
+        Chaque commande est unique, produite localement, avec des délais courts.<br>
+        <strong>Notre but :</strong> faire de l'impression 3D une solution simple, utile, et éco-responsable pour tous.
+    </p>
+</section>
+
+
+<div class="gallery-section">
+    <h2>Exemples de Créations et Réparations</h2>
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="media/creation1.jpg" alt="Création 3D 1">
+            <p>CRÉATION 3D 1</p>
+        </div>
+        <div class="gallery-item">
+            <img src="media/creation2.jpg" alt="Création 3D 2">
+            <p>CRÉATION 3D 2</p>
+        </div>
+        <div class="gallery-item">
+            <img src="media/reparation1.jpg" alt="Réparation 3D Avant/Après">
+            <p>RÉPARATION 3D 1 (Avant / Après)</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
