@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - 3D BUILD</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo 3D BUILD" class="logo">
+        
+        <p class="slogan">Réparez. Créez. Innover, en 3D.</p>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="services.html">Services</a>
+            <a href="boutique.html">Boutique</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <section id="presentation">
+            <h2>Bienvenue chez 3D BUILD</h2>
+            <p>Spécialiste de l'impression 3D à la demande, de la conception personnalisée, de la réparation de pièces cassées, et plus encore !</p>
+
+            <h3>Demander un devis</h3>
+            <form action="mailto:3d.buildesign77@gmail.com" method="POST" enctype="text/plain">
+                <label for="name">Nom :</label><br>
+                <input type="text" id="name" name="Nom" required><br><br>
+
+                <label for="email">Email :</label><br>
+                <input type="email" id="email" name="Email" required><br><br>
+
+                <label for="service">Service souhaité :</label><br>
+                <select id="service" name="Service">
+                    <option value="Impression">Impression 3D</option>
+                    <option value="Conception">Conception/modification de fichier</option>
+                    <option value="Personnalisation">Objet personnalisé</option>
+                    <option value="Réparation">Réparation de pièce</option>
+                </select><br><br>
+
+                <label for="description">Description de la demande :</label><br>
+                <textarea id="description" name="Description" rows="4" required></textarea><br><br>
+
+                <input type="submit" value="Envoyer">
+            </form>
+
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 3D BUILD - Tous droits réservés</p>
+    </footer>
+</body>
+</html>
