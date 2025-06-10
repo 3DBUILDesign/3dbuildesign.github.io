@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - 3D BUILD</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo 3D BUILD" class="logo">
+        
+        <p class="slogan">Réparez. Créez. Innover, en 3D.</p>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="services.html">Services</a>
+            <a href="boutique.html">Boutique</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <main>
+
+<section id="presentation">
+    <h2>Bienvenue chez 3D BUILD</h2>
+    <p>
+        Passionné par l'impression 3D et les solutions sur mesure, je vous propose un service local, rapide
+        et accessible.<br>
+        Que vous ayez un projet précis ou simplement une idée à explorer, 3D BUILD est là pour
+        transformer vos besoins en réalité, avec efficacité et créativité.<br>
+        Parce que réparer, créer et innover n'a jamais été aussi accessible, grâce à l'impression 3D.<br>
+        <strong>Mon objectif :</strong> faire de l'impression 3D une solution utile, durable et innovante pour tous.
+    </p>
+    <a href="ensavoirplus.html" class="cta">En savoir plus</a>
+</section>
+
+
+        <section id="presentation">
+            <h2>Bienvenue chez 3D BUILD</h2>
+            <p>Spécialiste de l'impression 3D à la demande, de la conception personnalisée, de la réparation de pièces cassées, et plus encore !</p>
+
+            
+
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 3D BUILD - Tous droits réservés</p>
+    </footer>
+
+
+<!-- Bloc API Cults3D GraphQL -->
+<section id="cults-api" style="padding: 2rem; background-color: #f0f0f0;">
+  <h2>Modèles 3D depuis Cults (via API GraphQL)</h2>
+  <div id="cults-models">Chargement des modèles...</div>
+</section>
+
+<script>
+  async function fetchCultsModels() {
+    const endpoint = "https://cults3d.com/graphql";
+    const apiKey = "wg8sh2uV8JFLCxWyNUEjs7iSZ";
+
+    const query = `
+      query {
+        models(first: 10) {
+          edges {
+            node {
+              name
+              slug
+              previewImage {
+                url
+              }
+            }
+          }
+        }
+      }
+    `;
+
+    try {
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": "Bearer " + apiKey
+        },
+        body: JSON.stringify({ query })
+      });
+
+      if (!response.ok) throw new Error("Erreur API GraphQL");
+
+      const result = await response.json();
+      const models = result.data.models.edges;
+
+      const container = document.getElementById("cults-models");
+      container.innerHTML = "";
+
+      models.forEach(({ node }) => {
+        const item = document.createElement("div");
+        item.style.marginBottom = "1rem";
+        item.innerHTML = `
+          <strong>${node.name}</strong><br>
+          <img src="${node.previewImage?.url || '#'}" alt="${node.name}" style="max-width:150px;"><br>
+          <a href="https://cults3d.com/fr/mod%C3%A8le-3d/${node.slug}" target="_blank">Voir le modèle</a>
+        `;
+        container.appendChild(item);
+      });
+
+    } catch (err) {
+      document.getElementById("cults-models").innerText = "Erreur lors du chargement des modèles.";
+      console.error(err);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", fetchCultsModels);
+</script>
+
+
+</body>
+</html>
